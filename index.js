@@ -1,28 +1,23 @@
-function Book(title, author, pages, read) {
-  this.title;
-  this.author;
-  this.pages;
-  this.read;
-  this.info = function () {
-    return `${title}, ${author}, ${pages}, ${read}`;
-  };
-}
-
 const theHobbit = new Book(
   "The Hobbit",
   "J.R.R Tolkien",
   "295 pages",
-  "not read yet"
+  "No"
 );
 theHobbit.info();
-console.log(theHobbit.info());
 
-let myLibary = [];
+let myLibary = [{title: "A Tale of Two Cities", author: "Charles Dickens", pages: "368", read: "No" }, {title: "Harry Potter and the Philosopher's Stone", author: "J. K. Rowling", pages: "223", read: "No" },  {title: "And Then There Were None", author: "Agatha Christie", pages: "272", read: "No" }];
 
-function Book() {
-
-}
+// function Book(title, author, pages, read) {
+//     this.title;
+//     this.author;
+//     this.pages;
+//     this.read;
+//     this.info = function () {
+//       return `${title}, ${author}, ${pages}, ${read}`;
+//     };
+//   }
 
 function addBookToLibary() {
-    
+
 }
