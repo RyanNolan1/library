@@ -1,0 +1,11 @@
+/* table {
+  width: 100vw;
+} */
+
+table {
+    border: solid 1px black;
+  }
+  
+  table td { 
+    border: solid 1px black;
+  }
