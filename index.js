@@ -1,10 +1,4 @@
-// const theHobbit = new Book(
-//   "The Hobbit",
-//   "J.R.R Tolkien",
-//   "295 pages",
-//   "No"
-// );
-// theHobbit.info();
+let bookForm = document.getElementById("book-form");
 
 let myLibrary = [
   {
@@ -27,15 +21,15 @@ let myLibrary = [
   },
 ];
 
-// function Book(title, author, pages, read) {
-//     this.title;
-//     this.author;
-//     this.pages;
-//     this.read;
-//     this.info = function () {
-//       return `${title}, ${author}, ${pages}, ${read}`;
-//     };
-//   }
+function Book(title, author, pages, read) {
+  this.title;
+  this.author;
+  this.pages;
+  this.read;
+  this.info = function () {
+    return `${title}, ${author}, ${pages}, ${read}`;
+  };
+}
 
 const newTable = document.createElement("table");
 newTable.innerHTML =
@@ -60,5 +54,22 @@ for (let i = 0; i < myLibrary.length; i++) {
 const target = document.getElementById("target");
 target.appendChild(newTable);
 
-function addBookToLibrary() {}
+bookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let title = document.getElementById("title");
+  let author = document.getElementById("author");
+  let pages = document.getElementById("pages");
+  let read = document.getElementById("read");
 
+myLibrary.push(
+    {
+        title: title.value,
+        author: author.value,
+        pages: pages.value,
+        read: read.value
+    }
+)
+console.log(myLibrary);
+});
+
+// function addBookToLibrary() {}
