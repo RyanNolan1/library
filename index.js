@@ -1,4 +1,5 @@
 let bookForm = document.getElementById("book-form");
+let bookTable = document.createElement("table");
 
 let myLibrary = [
   {
@@ -31,8 +32,9 @@ function Book(title, author, pages, read) {
   };
 }
 
-const newTable = document.createElement("table");
-newTable.innerHTML =
+
+function refreshTable() {
+bookTable.innerHTML =
   "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
 for (let i = 0; i < myLibrary.length; i++) {
   const newRow = document.createElement("tr");
@@ -48,11 +50,14 @@ for (let i = 0; i < myLibrary.length; i++) {
   newRow.appendChild(tdAuthor);
   newRow.appendChild(tdPages);
   newRow.appendChild(tdRead);
-  newTable.appendChild(newRow);
+  bookTable.appendChild(newRow);
 }
+}
+refreshTable()
+
 
 const target = document.getElementById("target");
-target.appendChild(newTable);
+target.appendChild(bookTable);
 
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -69,7 +74,7 @@ myLibrary.push(
         read: read.value
     }
 )
-console.log(myLibrary);
+refreshTable()
 });
 
 // function addBookToLibrary() {}
