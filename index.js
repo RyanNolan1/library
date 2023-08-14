@@ -1,33 +1,20 @@
 let bookForm = document.getElementById("book-form");
 let bookTable = document.createElement("table");
 
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  
 let myLibrary = [
-  {
-    title: "A Tale of Two Cities",
-    author: "Charles Dickens",
-    pages: "368",
-    read: "No",
-  },
-  {
-    title: "Harry Potter and the Philosopher's Stone",
-    author: "J. K. Rowling",
-    pages: "223",
-    read: "No",
-  },
-  {
-    title: "And Then There Were None",
-    author: "Agatha Christie",
-    pages: "272",
-    read: "No",
-  },
+  new Book ("A Tale of Two Cities", "Charles Dickens", "368", "No"),
+  new Book ("Harry Potter and the Philosopher's Stone", "J. K. Rowling", "223", "No"),
+  new Book ("And Then There Were None", "Agatha Christie", "272", "No")
 ];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
 
 function addBookToLibrary() {
   bookTable.innerHTML =
@@ -63,5 +50,6 @@ bookForm.addEventListener("submit", (e) => {
 
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+  console.log(myLibrary)
   addBookToLibrary();
 });
