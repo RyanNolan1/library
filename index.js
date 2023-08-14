@@ -23,58 +23,45 @@ let myLibrary = [
 ];
 
 function Book(title, author, pages, read) {
-  this.title;
-  this.author;
-  this.pages;
-  this.read;
-  this.info = function () {
-    return `${title}, ${author}, ${pages}, ${read}`;
-  };
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
-
-function refreshTable() {
-bookTable.innerHTML =
-  "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
-for (let i = 0; i < myLibrary.length; i++) {
-  const newRow = document.createElement("tr");
-  const tdTitle = document.createElement("td");
-  const tdAuthor = document.createElement("td");
-  const tdPages = document.createElement("td");
-  const tdRead = document.createElement("td");
-  tdTitle.textContent = myLibrary[i].title;
-  tdAuthor.textContent = myLibrary[i].author;
-  tdPages.textContent = myLibrary[i].pages;
-  tdRead.textContent = myLibrary[i].read;
-  newRow.appendChild(tdTitle);
-  newRow.appendChild(tdAuthor);
-  newRow.appendChild(tdPages);
-  newRow.appendChild(tdRead);
-  bookTable.appendChild(newRow);
+function addBookToLibrary() {
+  bookTable.innerHTML =
+    "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
+  for (let i = 0; i < myLibrary.length; i++) {
+    const newRow = document.createElement("tr");
+    const tdTitle = document.createElement("td");
+    const tdAuthor = document.createElement("td");
+    const tdPages = document.createElement("td");
+    const tdRead = document.createElement("td");
+    tdTitle.textContent = myLibrary[i].title;
+    tdAuthor.textContent = myLibrary[i].author;
+    tdPages.textContent = myLibrary[i].pages;
+    tdRead.textContent = myLibrary[i].read;
+    newRow.appendChild(tdTitle);
+    newRow.appendChild(tdAuthor);
+    newRow.appendChild(tdPages);
+    newRow.appendChild(tdRead);
+    bookTable.appendChild(newRow);
+  }
 }
-}
-refreshTable()
-
+addBookToLibrary();
 
 const target = document.getElementById("target");
 target.appendChild(bookTable);
 
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  let title = document.getElementById("title");
-  let author = document.getElementById("author");
-  let pages = document.getElementById("pages");
-  let read = document.getElementById("read");
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let pages = document.getElementById("pages").value;
+  let read = document.getElementById("read").value;
 
-myLibrary.push(
-    {
-        title: title.value,
-        author: author.value,
-        pages: pages.value,
-        read: read.value
-    }
-)
-refreshTable()
+  const newBook = new Book(title, author, pages, read);
+  myLibrary.push(newBook);
+  addBookToLibrary();
 });
-
-// function addBookToLibrary() {}
