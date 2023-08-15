@@ -18,13 +18,15 @@ let myLibrary = [
 
 function addBookToLibrary() {
   bookTable.innerHTML =
-    "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
+    "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th><th>Remove</th></thead>";
   for (let i = 0; i < myLibrary.length; i++) {
     const newRow = document.createElement("tr");
     const tdTitle = document.createElement("td");
     const tdAuthor = document.createElement("td");
     const tdPages = document.createElement("td");
     const tdRead = document.createElement("td");
+    const tdRemove = document.createElement("td");
+    tdRemove.innerHTML = '<button class="remove-button">X</button>'
     tdTitle.textContent = myLibrary[i].title;
     tdAuthor.textContent = myLibrary[i].author;
     tdPages.textContent = myLibrary[i].pages;
@@ -33,6 +35,7 @@ function addBookToLibrary() {
     newRow.appendChild(tdAuthor);
     newRow.appendChild(tdPages);
     newRow.appendChild(tdRead);
+    newRow.appendChild(tdRemove)
     bookTable.appendChild(newRow);
   }
 }
