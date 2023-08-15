@@ -54,6 +54,18 @@ bookForm.addEventListener("submit", (e) => {
 
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
-  console.log(myLibrary)
   addBookToLibrary();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    let removeButtons = document.querySelectorAll(".remove-button");
+    removeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            console.log("test");
+        });
+    });
+});
+
+
+
+
