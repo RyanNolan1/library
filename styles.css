@@ -23,6 +23,7 @@ body {
 
 table {
     border: solid 1px black;
+    width:800px;
   }
   
   table td { 
