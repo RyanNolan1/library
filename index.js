@@ -26,11 +26,12 @@ function addBookToLibrary() {
     const tdPages = document.createElement("td");
     const tdRead = document.createElement("td");
     const tdRemove = document.createElement("td");
-    tdRemove.innerHTML = '<button class="remove-button">X</button>'
     tdTitle.textContent = myLibrary[i].title;
     tdAuthor.textContent = myLibrary[i].author;
     tdPages.textContent = myLibrary[i].pages;
     tdRead.textContent = myLibrary[i].read;
+    tdRemove.innerHTML = '<button class="remove-button">X</button>'
+    tdRemove.value = [i];
     newRow.appendChild(tdTitle);
     newRow.appendChild(tdAuthor);
     newRow.appendChild(tdPages);
