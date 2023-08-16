@@ -30,30 +30,33 @@ function refreshLibrary() {
     const tdAuthor = document.createElement("td");
     const tdPages = document.createElement("td");
     const tdRead = document.createElement("td");
-    const tdRemove = document.createElement("td");
     const checkBox = document.createElement("input");
     tdTitle.textContent = myLibrary[i].title;
     tdAuthor.textContent = myLibrary[i].author;
     tdPages.textContent = myLibrary[i].pages;
     tdRead.textContent = myLibrary[i].read;
     checkBox.type = "checkbox";
+    checkBox.checked = myLibrary[i].select;
+    checkBox.addEventListener("change", function () {
+      myLibrary[i].select = checkBox.checked;
+      refreshLibrary();
+    });
     newRow.appendChild(tdTitle);
     newRow.appendChild(tdAuthor);
     newRow.appendChild(tdPages);
     newRow.appendChild(tdRead);
-    newRow.appendChild(tdRemove);
-    tdRemove.appendChild(checkBox);
+    newRow.appendChild(checkBox);
     bookTable.appendChild(newRow);
   }
 }
 
 function deleteBook() {
-//   var rows = bookTable.rows.length;
-//   for (var i = rows - 1; i > 0; i--) {
-//     if (bookTable.rows[i].cells[4].children[0].checked) {
-//         bookTable.deleteRow(i);
-//     }
-//   }
+  let newArray = myLibrary.filter(function (bookObject) {
+    return bookObject.select !== true;
+  });
+
+  myLibrary = newArray;
+  refreshLibrary();
 }
 
 const target = document.getElementById("target");
@@ -65,11 +68,10 @@ bookForm.addEventListener("submit", (e) => {
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
   let read = document.getElementById("read").value;
-  let select = false
+  let select = false;
 
   const newBook = new Book(title, author, pages, read, select);
   myLibrary.push(newBook);
-  console.log(myLibrary)
   refreshLibrary();
 });
 
