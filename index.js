@@ -20,7 +20,6 @@ let myLibrary = [
 ];
 
 function refreshLibrary() {
-  bookTable.innerHTML = "";
   bookTable.innerHTML =
     "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
   for (let i = 0; i < myLibrary.length; i++) {
@@ -35,7 +34,7 @@ function refreshLibrary() {
     tdAuthor.textContent = myLibrary[i].author;
     tdPages.textContent = myLibrary[i].pages;
     tdRead.textContent = myLibrary[i].read;
-    checkBox.type = 'checkbox';
+    checkBox.type = "checkbox";
     newRow.appendChild(tdTitle);
     newRow.appendChild(tdAuthor);
     newRow.appendChild(tdPages);
@@ -44,14 +43,14 @@ function refreshLibrary() {
     tdRemove.appendChild(checkBox);
     bookTable.appendChild(newRow);
   }
+}
 
-  let removeButtons = document.querySelectorAll(".remove-button");
-  for (let i = 0; i < removeButtons.length; i++) {
-    removeButtons[i].addEventListener("click", function () {
-      let index = parseInt(this.dataset.index);
-      myLibrary.splice(index, 1);
-      refreshLibrary();
-    });
+function deleteBook() {
+  var rows = bookTable.rows.length;
+  for (var i = rows - 1; i > 0; i--) {
+    if (bookTable.rows[i].cells[4].children[0].checked) {
+        bookTable.deleteRow(i);
+    }
   }
 }
 
