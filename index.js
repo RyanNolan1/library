@@ -1,22 +1,24 @@
 let bookForm = document.getElementById("book-form");
 let bookTable = document.createElement("table");
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, select) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.select = select;
 }
 
 let myLibrary = [
-  new Book("A Tale of Two Cities", "Charles Dickens", "368", "No"),
+  new Book("A Tale of Two Cities", "Charles Dickens", "368", "No", false),
   new Book(
     "Harry Potter and the Philosopher's Stone",
     "J. K. Rowling",
     "223",
-    "No"
+    "No",
+    false
   ),
-  new Book("And Then There Were None", "Agatha Christie", "272", "No"),
+  new Book("And Then There Were None", "Agatha Christie", "272", "No", false),
 ];
 
 function refreshLibrary() {
@@ -46,12 +48,12 @@ function refreshLibrary() {
 }
 
 function deleteBook() {
-  var rows = bookTable.rows.length;
-  for (var i = rows - 1; i > 0; i--) {
-    if (bookTable.rows[i].cells[4].children[0].checked) {
-        bookTable.deleteRow(i);
-    }
-  }
+//   var rows = bookTable.rows.length;
+//   for (var i = rows - 1; i > 0; i--) {
+//     if (bookTable.rows[i].cells[4].children[0].checked) {
+//         bookTable.deleteRow(i);
+//     }
+//   }
 }
 
 const target = document.getElementById("target");
@@ -63,9 +65,11 @@ bookForm.addEventListener("submit", (e) => {
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
   let read = document.getElementById("read").value;
+  let select = false
 
-  const newBook = new Book(title, author, pages, read);
+  const newBook = new Book(title, author, pages, read, select);
   myLibrary.push(newBook);
+  console.log(myLibrary)
   refreshLibrary();
 });
 
