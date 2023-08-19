@@ -54,8 +54,18 @@ function deleteBook() {
   let newArray = myLibrary.filter(function (bookObject) {
     return bookObject.select !== true;
   });
-
   myLibrary = newArray;
+  refreshLibrary();
+}
+
+function changeReadStatus() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].select === true && myLibrary[i].read === "No") {
+      myLibrary[i].read = "Yes";
+    } else if (myLibrary[i].select === true && myLibrary[i].read === "Yes") {
+      myLibrary[i].read = "No";
+    }
+  }
   refreshLibrary();
 }
 
