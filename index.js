@@ -66,6 +66,7 @@ function changeReadStatus() {
       myLibrary[i].read = "No";
     }
   }
+  myLibrary.forEach((book) => (book.select = false));
   refreshLibrary();
 }
 
@@ -82,6 +83,7 @@ bookForm.addEventListener("submit", (e) => {
 
   const newBook = new Book(title, author, pages, read, select);
   myLibrary.push(newBook);
+  myLibrary.forEach((book) => (book.select = false));
   refreshLibrary();
 });
 
