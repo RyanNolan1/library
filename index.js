@@ -54,8 +54,18 @@ function deleteBook() {
   let newArray = myLibrary.filter(function (bookObject) {
     return bookObject.select !== true;
   });
-
   myLibrary = newArray;
+  refreshLibrary();
+}
+
+function changeReadStatus() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].select === true && myLibrary[i].read === "No") {
+      myLibrary[i].read = "Yes";
+    } else if (myLibrary[i].select === true && myLibrary[i].read === "Yes") {
+      myLibrary[i].read = "No";
+    }
+  }
   refreshLibrary();
 }
 
@@ -67,7 +77,7 @@ bookForm.addEventListener("submit", (e) => {
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
-  let read = document.getElementById("read").value;
+  let read = yesOrNo();
   let select = false;
 
   const newBook = new Book(title, author, pages, read, select);
@@ -78,3 +88,14 @@ bookForm.addEventListener("submit", (e) => {
 document.addEventListener("DOMContentLoaded", function () {
   refreshLibrary();
 });
+
+const readNo = document.getElementById("read-no");
+const readYes = document.getElementById("read-yes");
+
+function yesOrNo() {
+  if (readNo.checked) {
+    return "No";
+  } else if (readYes.checked) {
+    return "Yes";
+  }
+}
