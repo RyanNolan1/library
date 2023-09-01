@@ -14,6 +14,7 @@
       <button onclick="deleteBook()">Delete</button>
       <button onclick="changeReadStatus()">Change Read Status</button>
       <button>Add Book</button>
+      <section id="form-container">
       <form id="book-form">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" /><br />
@@ -22,10 +23,13 @@
         <label for="pages">Pages</label>
         <input type="number" id="pages" name="pages" /><br />
         <label for="read">Read</label>
+        <div id="radio-container">
         No: <input type="radio" id="read-no" name="read" /> Yes:
         <input type="radio" id="read-yes" name="read" /><br />
+      </div>
         <input type="submit" id="submit-book" value="Submit" />
       </form>
+    </section>
     </div>
   </body>
   <script src="index.js"></script>
