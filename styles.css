@@ -34,7 +34,7 @@ body {
     align-items:center;
     padding:20px;
     filter: drop-shadow(5px 5px 5px rgb(140, 140, 140));
-
+    visibility: hidden
 }
 
 #book-form {
