@@ -47,6 +47,10 @@ function refreshLibrary() {
     newRow.appendChild(tdRead);
     newRow.appendChild(checkBox);
     bookTable.appendChild(newRow);
+    tdTitle.style.width = "50%";
+    tdAuthor.style.width = "25%";
+    tdPages.style.width = "10%";
+    tdRead.style.width = "10%";
   }
 }
 
