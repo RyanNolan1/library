@@ -26,15 +26,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 300px;
-    width:350px;
     border: 2px solid black;
-    border-radius: 30px;
     background-color: rgb(145, 144, 144);
     display:flex;
     flex-direction:column;
     justify-content: center;
     align-items:center;
+    padding:20px;
+    filter: drop-shadow(5px 5px 5px rgb(140, 140, 140));
+
 }
 
 #book-form {
@@ -43,9 +43,18 @@ body {
     flex-direction:column;
 }
 
+#book-form input{
+    height:50px;
+    gap:0px;
+}
+
 #radio-container {
     display:flex;
     flex-direction:row;
+    align-items: center;
+    height:50px;
+    margin-bottom: 20px;
+    gap:20px
 }
 
 table {
