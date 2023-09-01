@@ -22,7 +22,7 @@ body {
 }
 
 #form-container {
-    position:absolute;
+    position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -34,7 +34,16 @@ body {
     align-items:center;
     padding:20px;
     filter: drop-shadow(5px 5px 5px rgb(140, 140, 140));
-    visibility: hidden
+    visibility: hidden;
+    gap:20px;
+}
+
+#close-form-button {
+    height:40px;
+    width:40px;
+    margin-left:auto;
+    background-color:red;
+    align-self:right;
 }
 
 #book-form {
@@ -45,7 +54,6 @@ body {
 
 #book-form input{
     height:50px;
-    gap:0px;
 }
 
 #radio-container {

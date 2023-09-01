@@ -13,8 +13,9 @@
       <div id="target"></div>
       <button onclick="deleteBook()">Delete</button>
       <button onclick="changeReadStatus()">Change Read Status</button>
-      <button id="add-book-button" onclick="showHideForm()">Add Book</button>
+      <button id="add-book-button" onclick="showForm()">Add Book</button>
       <section id="form-container">
+        <div id="close-form-button" onclick="hideForm()"></div>
         <form id="book-form">
           <!-- <label for="title">Title</label> -->
           <input type="text" id="title" name="title" placeholder="Title" /><br />

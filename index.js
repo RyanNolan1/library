@@ -1,6 +1,7 @@
 let bookForm = document.getElementById("book-form");
 let bookFormContainer = document.getElementById("form-container");
 let addBookButton = document.getElementById("add-book-button");
+let closeFormButton = document.getElementById("close-form-button")
 let bookTable = document.createElement("table");
 
 function Book(title, author, pages, read, select) {
@@ -108,6 +109,10 @@ function yesOrNo() {
   }
 }
 
-function showHideForm() {
+function showForm() {
     bookFormContainer.style.visibility = "visible";
+}
+
+function hideForm() {
+   bookFormContainer.style.visibility = "hidden";
 }
