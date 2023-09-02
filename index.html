@@ -17,10 +17,6 @@
       </section>
       <div id="target"></div>
       <section id="button-container">
-        <button class="library-buttons" onclick="deleteBook()">Delete</button>
-        <button class="library-buttons" onclick="changeReadStatus()">
-          Change Read Status
-        </button>
         <button
           class="library-buttons"
           id="add-book-button"
@@ -28,6 +24,17 @@
         >
           Add Book
         </button>
+        <button class="library-buttons" onclick="deleteBook()">Delete</button>
+        <button class="library-buttons" onclick="changeReadStatus()">
+          Change Read Status
+        </button>
+        <button
+        class="library-buttons"
+        id="select-all-button"
+        onclick="selectAllBooks()"
+      >
+        Select All Books
+      </button>
       </section>
       <section id="form-container">
         <svg

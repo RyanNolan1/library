@@ -143,3 +143,10 @@ function readOrUnreadCount() {
   document.getElementById("unread-books").innerHTML = `Unread Books: ${unreadCount}`;
   document.getElementById("read-books").innerHTML = `Read Books: ${readCount}`;
 }
+
+function selectAllBooks() {
+  myLibrary.forEach(book => {
+    book.select = true;
+  })
+  refreshLibrary();
+}
