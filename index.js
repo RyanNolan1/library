@@ -57,6 +57,7 @@ function refreshLibrary() {
     tdPages.style.width = "10%";
     tdRead.style.width = "10%";
     tdCheckBox.style.width = "10%";
+    // tdCheckBox.style.align = center;
   }
 }
 
