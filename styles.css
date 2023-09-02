@@ -42,6 +42,15 @@ body {
   align-items: center;
 }
 
+#book-counter-container {
+   display:flex;
+   flex-direction:row;
+   align-items:center;
+   height:100px;
+   width:460px;
+   justify-content: space-between;
+}
+
 #target {
     background-color: rgb(255, 255, 255);
     text-align:center;

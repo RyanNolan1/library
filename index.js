@@ -1,7 +1,7 @@
 let bookForm = document.getElementById("book-form");
 let bookFormContainer = document.getElementById("form-container");
 let addBookButton = document.getElementById("add-book-button");
-let closeFormButton = document.getElementById("close-form-button")
+let closeFormButton = document.getElementById("close-form-button");
 let bookTable = document.createElement("table");
 
 function Book(title, author, pages, read, select) {
@@ -50,15 +50,16 @@ function refreshLibrary() {
     newRow.appendChild(tdPages);
     newRow.appendChild(tdRead);
     newRow.appendChild(tdCheckBox);
-    tdCheckBox.appendChild(checkBox)
+    tdCheckBox.appendChild(checkBox);
     bookTable.appendChild(newRow);
     tdTitle.style.width = "40%";
     tdAuthor.style.width = "30%";
     tdPages.style.width = "10%";
     tdRead.style.width = "10%";
     tdCheckBox.style.width = "10%";
-    // tdCheckBox.style.align = center;
   }
+  countBooks();
+  readOrUnreadCount();
 }
 
 function deleteBook() {
@@ -67,6 +68,8 @@ function deleteBook() {
   });
   myLibrary = newArray;
   refreshLibrary();
+  countBooks();
+  readOrUnreadCount();
 }
 
 function changeReadStatus() {
@@ -102,10 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
   refreshLibrary();
 });
 
-const readNo = document.getElementById("read-no");
-const readYes = document.getElementById("read-yes");
-
 function yesOrNo() {
+  const readNo = document.getElementById("read-no");
+  const readYes = document.getElementById("read-yes");
   if (readNo.checked) {
     return "No";
   } else if (readYes.checked) {
@@ -114,9 +116,30 @@ function yesOrNo() {
 }
 
 function showForm() {
-    bookFormContainer.style.visibility = "visible";
+  bookFormContainer.style.visibility = "visible";
 }
 
 function hideForm() {
-   bookFormContainer.style.visibility = "hidden";
+  bookFormContainer.style.visibility = "hidden";
+}
+
+function countBooks() {
+  document.getElementById(
+    "total-books"
+  ).innerHTML = `Total Books: ${myLibrary.length}`;
+}
+
+function readOrUnreadCount() {
+  let unreadCount = 0;
+  let readCount = 0;
+
+  myLibrary.forEach((book) => {
+    if (book.read === "No") {
+      unreadCount += 1;
+    } else {
+      readCount +=1;
+    }
+  });
+  document.getElementById("unread-books").innerHTML = `Unread Books: ${unreadCount}`;
+  document.getElementById("read-books").innerHTML = `Read Books: ${readCount}`;
 }
