@@ -1,49 +1,180 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Bold.ttf") format("ttf");
+}
+
 * {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color:grey;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(99, 214, 221);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#63d6dd",endColorstr="#e63bf7",GradientType=1);
 }
 
 #container {
-    max-width:1280px;
-    width:100%;
-    height:100vh;
-    background-color:rgb(255, 255, 255);
-     display:flex;
-    flex-direction:column;
-    align-items:center;
+  max-width: 1280px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#target {
+    background-color: rgb(255, 255, 255);
+    text-align:center;
+  }
+
+#button-container {
+    display:flex;
+    flex-direction:row;
+    gap:40px;
+    height:100px;
+    align-items: center;
+}
+
+.library-buttons {
+    height:40px;
+    width:200px;
+}
+
+.library-buttons:hover {
+ cursor:pointer;
+}
+
+#form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  filter: drop-shadow(5px 5px 5px rgb(140, 140, 140));
+  visibility: hidden;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+#close-form-button {
+  height: 25px;
+  width: 25px;
+  margin-left: auto;
+  fill: rgb(0, 0, 0);
+  align-self: right;
+}
+
+#close-form-button:hover {
+  cursor: pointer;
+}
+
+#book-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+#book-form input {
+  height: 50px;
+  text-indent: 10px;
+  border: none;
+}
+
+.input-area {
+  background-color: rgb(227, 227, 227);
+}
+
+#radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+#submit-book {
+  border-radius: 200px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  background: rgb(99, 214, 221);
+  background: -moz-linear-gradient(
+    225deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    225deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  background: linear-gradient(
+    225deg,
+    rgba(99, 214, 221, 1) 0%,
+    rgba(230, 59, 247, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#63d6dd",endColorstr="#e63bf7",GradientType=1);
+}
+
+#submit-book:hover {
+  cursor: pointer;
 }
 
 table {
-    border: solid 1px black;
-    width:800px;
-  }
-  
-  table td { 
-    border: solid 1px black;
-    margin:0px;
-    padding:0px;
-  }
+  border: solid 1px black;
+  width: 1000px;
+}
+
+table td {
+  border: solid 1px black;
+  margin: 0px;
+  padding: 0px;
+}
 
 .remove-button {
-    width:100%;
-    min-height:20px;
-    border: 0;
-    background-color:white;
-    padding:0;
-    margin:0;
+  width: 100%;
+  min-height: 20px;
+  border: 0;
+  background-color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .remove-button:hover {
-    width:100%;
-    border: 0;
-    background-color:rgb(189, 189, 189);
-    cursor:pointer;
+  width: 100%;
+  border: 0;
+  background-color: rgb(189, 189, 189);
+  cursor: pointer;
 }
+
+

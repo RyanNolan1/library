@@ -1,4 +1,7 @@
 let bookForm = document.getElementById("book-form");
+let bookFormContainer = document.getElementById("form-container");
+let addBookButton = document.getElementById("add-book-button");
+let closeFormButton = document.getElementById("close-form-button")
 let bookTable = document.createElement("table");
 
 function Book(title, author, pages, read, select) {
@@ -23,13 +26,14 @@ let myLibrary = [
 
 function refreshLibrary() {
   bookTable.innerHTML =
-    "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th></thead>";
+    "<thead><th>Title</th><th>Author</th><th>Pages</th><th>Read</th><th>Select</th></thead>";
   for (let i = 0; i < myLibrary.length; i++) {
     const newRow = document.createElement("tr");
     const tdTitle = document.createElement("td");
     const tdAuthor = document.createElement("td");
     const tdPages = document.createElement("td");
     const tdRead = document.createElement("td");
+    const tdCheckBox = document.createElement("td");
     const checkBox = document.createElement("input");
     tdTitle.textContent = myLibrary[i].title;
     tdAuthor.textContent = myLibrary[i].author;
@@ -45,12 +49,15 @@ function refreshLibrary() {
     newRow.appendChild(tdAuthor);
     newRow.appendChild(tdPages);
     newRow.appendChild(tdRead);
-    newRow.appendChild(checkBox);
+    newRow.appendChild(tdCheckBox);
+    tdCheckBox.appendChild(checkBox)
     bookTable.appendChild(newRow);
-    tdTitle.style.width = "50%";
-    tdAuthor.style.width = "25%";
+    tdTitle.style.width = "40%";
+    tdAuthor.style.width = "30%";
     tdPages.style.width = "10%";
     tdRead.style.width = "10%";
+    tdCheckBox.style.width = "10%";
+    // tdCheckBox.style.align = center;
   }
 }
 
@@ -104,4 +111,12 @@ function yesOrNo() {
   } else if (readYes.checked) {
     return "Yes";
   }
+}
+
+function showForm() {
+    bookFormContainer.style.visibility = "visible";
+}
+
+function hideForm() {
+   bookFormContainer.style.visibility = "hidden";
 }
