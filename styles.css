@@ -60,10 +60,10 @@ body {
 }
 
 #close-form-button {
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   margin-left: auto;
-  background-color: red;
+  fill: rgb(0, 0, 0);
   align-self: right;
 }
 
@@ -84,11 +84,11 @@ label {
 #book-form input {
   height: 50px;
   text-indent: 10px;
-  border:none;
+  border: none;
 }
 
 .input-area {
-    background-color:rgb(227, 227, 227);
+  background-color: rgb(227, 227, 227);
 }
 
 #radio-container {
@@ -102,8 +102,8 @@ label {
 
 #submit-book {
   border-radius: 200px;
-  font-size:18px;
-  color:white;
+  font-size: 18px;
+  color: white;
   border: none;
   background: rgb(99, 214, 221);
   background: -moz-linear-gradient(
@@ -153,4 +153,8 @@ table td {
   border: 0;
   background-color: rgb(189, 189, 189);
   cursor: pointer;
+}
+
+#target {
+  background-color: rgb(255, 255, 255);
 }
