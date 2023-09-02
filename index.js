@@ -59,6 +59,7 @@ function refreshLibrary() {
     tdCheckBox.style.width = "10%";
   }
   countBooks();
+  countUnreadBooks() 
 }
 
 function deleteBook() {
@@ -68,6 +69,7 @@ function deleteBook() {
   myLibrary = newArray;
   refreshLibrary();
   countBooks();
+  countUnreadBooks() 
 }
 
 function changeReadStatus() {
@@ -126,3 +128,16 @@ function countBooks() {
     "total-books"
   ).innerHTML = `Total Books: ${myLibrary.length}`;
 }
+
+function countUnreadBooks() {
+  let count = 0;
+
+  myLibrary.forEach((book) => {
+    if (book.read === "No") {
+      count += 1;
+    }
+  });
+  document.getElementById("unread-books").innerHTML = `Unread Books: ${count}`;
+}
+
+countUnreadBooks();
