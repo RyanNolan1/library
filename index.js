@@ -59,7 +59,7 @@ function refreshLibrary() {
     tdCheckBox.style.width = "10%";
   }
   countBooks();
-  countUnreadBooks() 
+  readOrUnreadCount();
 }
 
 function deleteBook() {
@@ -69,7 +69,7 @@ function deleteBook() {
   myLibrary = newArray;
   refreshLibrary();
   countBooks();
-  countUnreadBooks() 
+  readOrUnreadCount();
 }
 
 function changeReadStatus() {
@@ -129,15 +129,17 @@ function countBooks() {
   ).innerHTML = `Total Books: ${myLibrary.length}`;
 }
 
-function countUnreadBooks() {
-  let count = 0;
+function readOrUnreadCount() {
+  let unreadCount = 0;
+  let readCount = 0;
 
   myLibrary.forEach((book) => {
     if (book.read === "No") {
-      count += 1;
+      unreadCount += 1;
+    } else {
+      readCount +=1;
     }
   });
-  document.getElementById("unread-books").innerHTML = `Unread Books: ${count}`;
+  document.getElementById("unread-books").innerHTML = `Unread Books: ${unreadCount}`;
+  document.getElementById("read-books").innerHTML = `Read Books: ${readCount}`;
 }
-
-countUnreadBooks();
