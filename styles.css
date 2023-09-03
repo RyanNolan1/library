@@ -84,6 +84,10 @@ padding-top:50px;
     height:50px;
   }
 
+  tr:nth-child(even) {
+    background-color:rgb(214, 214, 214);
+  }
+
 #button-container {
     display:flex;
     flex-direction:row;
