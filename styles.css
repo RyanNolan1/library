@@ -97,12 +97,19 @@ padding-top:50px;
 }
 
 .library-buttons {
-    height:40px;
+    height:50px;
     width:200px;
+    border-radius: 50px;
+    border:none;
+    font-size:1rem;
+    color:white;
+    background-color:#362f4b;
+    transition:0.4s;
 }
 
 .library-buttons:hover {
  cursor:pointer;
+ background-color:black;
 }
 
 #form-container {
