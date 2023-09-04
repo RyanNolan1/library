@@ -124,7 +124,7 @@ padding-top:50px;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  filter: drop-shadow(5px 5px 5px rgb(140, 140, 140));
+  filter: drop-shadow(5px 5px 5px rgb(50, 50, 50));
   visibility: hidden;
   gap: 20px;
   border-radius: 20px;
@@ -171,34 +171,6 @@ label {
   gap: 20px;
 }
 
-#submit-book {
-  border-radius: 200px;
-  font-size: 18px;
-  color: white;
-  border: none;
-  background: rgb(99, 214, 221);
-  background: -moz-linear-gradient(
-    225deg,
-    rgba(99, 214, 221, 1) 0%,
-    rgba(230, 59, 247, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    rgba(99, 214, 221, 1) 0%,
-    rgba(230, 59, 247, 1) 100%
-  );
-  background: linear-gradient(
-    225deg,
-    rgba(99, 214, 221, 1) 0%,
-    rgba(230, 59, 247, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#63d6dd",endColorstr="#e63bf7",GradientType=1);
-}
-
-#submit-book:hover {
-  cursor: pointer;
-}
-
 .remove-button {
   width: 100%;
   min-height: 20px;
@@ -216,3 +188,19 @@ label {
 }
 
 
+#submit-book {
+  display: flex;
+  font-size:18px;
+  background: linear-gradient(90deg, #e73bf7, transparent) #63d7dd;
+  font-family: inherit;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 1s;
+  place-content: center;
+  border-radius:100px;
+}
+#submit-book:hover, #submit-book:focus {
+  background-color: #011dd6;
+  color: #fff;
+  cursor:pointer;
+}
