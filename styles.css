@@ -104,12 +104,13 @@ padding-top:50px;
     font-size:1rem;
     color:white;
     background-color:#362f4b;
-    transition:0.4s;
+    transition:0.5s;
 }
 
 .library-buttons:hover {
  cursor:pointer;
- background-color:black;
+ background-color:white;
+ color:black;
 }
 
 #form-container {
