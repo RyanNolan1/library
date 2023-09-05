@@ -220,3 +220,23 @@ input[type='radio'] {
 input[type='checkbox'] {
   accent-color: #232323;
 }
+
+@media only screen and (max-width:1024px) {
+  #target {
+    overflow-x: scroll;
+    display:block;
+    width:90%;
+  }
+
+  table {
+    width: 800px;
+  }
+
+  #button-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:20px;
+    padding-top:20px;
+}
+}
