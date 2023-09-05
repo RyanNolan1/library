@@ -37,7 +37,7 @@ body {
 
 #container {
   max-width: 1280px;
-  width: 100%;
+  width: 90%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -61,10 +61,12 @@ h1 {
   background-color: rgb(255, 255, 255);
   text-align: center;
   border-radius: 10px;
+  width:100%;
 }
 
 table {
-  width: 1000px;
+  width: 100%;
+  min-width:800px;
   border-radius: 10px;
   border-spacing: 0px;
   overflow: hidden;
@@ -224,11 +226,6 @@ input[type="checkbox"] {
   #target {
     overflow-x: scroll;
     display: block;
-    width: 90%;
-  }
-
-  table {
-    width: 1000px;
   }
 
   #button-container {
@@ -241,16 +238,6 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 767px) {
-  #target {
-    overflow-x: scroll;
-    display: block;
-    width: 90%;
-  }
-
-  table {
-    width: 800px;
-  }
-
   #button-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
