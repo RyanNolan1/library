@@ -205,9 +205,16 @@ label {
   place-content: center;
   border-radius:100px;
 }
-#submit-book:hover, #submit-book:focus {
+#submit-book:hover {
   background-color: #011dd6;
   color: #fff;
   cursor:pointer;
 }
 
+input[type='radio'] {
+  accent-color: #232323;
+}
+
+input[type='checkbox'] {
+  accent-color: #232323;
+}
