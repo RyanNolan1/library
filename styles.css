@@ -72,6 +72,9 @@ table {
   border-spacing: 0px;
   overflow: hidden;
   overscroll-behavior: none;
+  overscroll-behavior: none;
+  -ms-overscroll-behavior: none;
+  -webkit-overscroll-behavior: none;
 }
 
 thead {
