@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Poppins";
-  src: url("./fonts/Poppins-Bold.ttf") format("ttf"),
-  url('./fonts/Poppins-Bold.ttf') format('truetype');
+  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
 }
 
 * {
@@ -225,6 +224,9 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 1024px) {
+
+
+
   #target {
     overflow-x: scroll;
     display: block;
