@@ -29,6 +29,6 @@ https://ryannolan1.github.io/library/
 ## Getting Started
 
 1. Clone the repository:
-   git clone https://github.com/RyanNolan1/library.git
-   
+   <br />git clone https://github.com/RyanNolan1/library.git
+
 2. Open index.html in your web browser
