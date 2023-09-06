@@ -71,6 +71,7 @@ table {
   border-radius: 10px;
   border-spacing: 0px;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 thead {
