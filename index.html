@@ -35,6 +35,13 @@
       >
         Select All Books
       </button>
+      <button
+      class="library-buttons"
+      id="deselect-all-button"
+      onclick="deselectAllBooks()"
+    >
+      Deselect All Books
+    </button>
       </section>
       <section id="form-container">
         <section id="add-book-form">
@@ -91,8 +98,8 @@
           /><br />
           <label for="read">HAVE YOU READ THIS BOOK?</label>
           <div id="radio-container">
-            No: <input type="radio" id="read-no" name="read" /> Yes:
-            <input type="radio" id="read-yes" name="read" /><br />
+            No: <input type="radio" id="read-no" name="read" required="required"/> Yes:
+            <input type="radio" id="read-yes" name="read" required="required" /><br />
           </div>
           <input type="submit" id="submit-book" value="Submit" />
         </form>
