@@ -99,8 +99,12 @@ tr:nth-child(even) {
 #button-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width:100%;
   gap: 40px;
-  min-height: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   align-items: center;
 }
 
@@ -236,19 +240,16 @@ input[type="checkbox"] {
   }
 
   #button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
-    padding-top: 20px;
+    display: flex;
+    gap: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   #button-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
     gap: 20px;
     padding-top: 25px;
     padding-bottom: 25px;
