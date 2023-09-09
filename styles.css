@@ -154,6 +154,15 @@ tr:nth-child(even) {
   margin-left: auto;
   fill: #362f4b;
   align-self: right;
+  transition: 0.4s;
+}
+
+#close-form-button:hover {
+  height: 25px;
+  width: 25px;
+  margin-left: auto;
+  fill: rgba(230, 59, 247, 1);
+  align-self: right;
 }
 
 #close-form-button:hover {
