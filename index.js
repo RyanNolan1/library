@@ -151,3 +151,10 @@ function selectAllBooks() {
   })
   refreshLibrary();
 }
+
+function deselectAllBooks() {
+  myLibrary.forEach(book => {
+    book.select = false;
+  })
+  refreshLibrary();
+}
