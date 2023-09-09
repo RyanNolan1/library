@@ -99,6 +99,7 @@ bookForm.addEventListener("submit", (e) => {
   myLibrary.push(newBook);
   myLibrary.forEach((book) => (book.select = false));
   refreshLibrary();
+  bookForm.reset();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
