@@ -118,10 +118,12 @@ function yesOrNo() {
 
 function showForm() {
   bookFormContainer.style.visibility = "visible";
+  bookFormContainer.style.opacity = 1;
 }
 
 function hideForm() {
   bookFormContainer.style.visibility = "hidden";
+  bookFormContainer.style.opacity = 0;
 }
 
 function countBooks() {
